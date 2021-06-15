@@ -1,0 +1,156 @@
+.container.tips-container {
+	min-width: 335px;
+	padding: 0 20px;
+	margin:14px auto;
+	border-top:1.5px solid #B2B2B2;
+	font-weight: 400;
+	color: #B2B2B2;
+}
+
+.logo-title{
+	color: #B2B2B2;
+	font-family: 'Actor';
+	font-size: 18px;
+	font-weight: lighter;
+	margin-top:10px;
+	margin-bottom: 24px;
+	span{
+		text-transform: uppercase;
+		font-weight: bold;
+	}	
+}
+
+.accordion-summary{
+	display: flex;
+	width: 100%;
+	background: #ffffff;
+	justify-content: space-between;
+	align-items:center;
+	border-bottom:1.5px solid #22BF95;
+	height: 54px;
+	cursor: pointer;
+	&:first-child{
+		border-top:1.5px solid #22BF95;
+	}
+
+	.accordion-title{
+		font-family: 'Aclonica';
+		font-size: 16px;
+		color: #191919;
+		flex: 0 0 68%;
+	}
+
+	.accordion-number{
+			font-family: 'Actor';
+			font-weight: 400;
+			font-size: 40px;
+			color: #E5E5E5;
+			margin:0 16px;
+		}
+
+	.accordion-marker {
+		display: block;
+		width: 14px;
+		height: 14px;
+		border:1.5px solid #22BF95;
+		border-radius:50%;
+		position: relative;
+		&:before{
+			content: '';
+			width:7px;
+			height: 1px;
+			background: #22BF95;
+			position: absolute;
+			top: 50%;
+			left:50%;
+			transform: translate(-50%,-50%);
+		}
+		&:after{
+			content: '';
+			width:7px;
+			height: 1px;
+			background: #22BF95;
+			position: absolute;
+			top: 50%;
+			left:50%;
+			transform: translate(-50%,-50%) rotate(90deg);
+		}
+	}
+}
+
+.accordion-summary.active{
+	border-bottom:none;
+	.accordion-number {
+		display: none;
+	}
+	.accordion-title {
+		font-size: 24px;
+		flex:1 0 68%;
+	}
+	.accordion-marker {
+		&:before,&:after{
+			transform: translate(-50%,-50%) rotate(0deg);
+		}
+	}
+}
+
+.accordion-content {
+	display: none;
+}
+
+.accordion-content.active{
+	font-family: 'Aclonica';
+	font-size: 14px;
+	line-height: 24px;
+	color: #191919;
+	display: block;
+
+	.accordion-img-container {
+	max-width: 116px;
+	max-height: 116px;
+	margin: 0 auto 20px;
+
+	img{
+		width: 100%;
+		}
+	}
+
+	.text-content {
+		text-align: left;
+		p{
+			margin-bottom: 20px;
+		}
+	}
+
+	.accordion-footer {
+		font-size: 12px;
+		line-height: 24px;
+		color: #7F7F7F;
+		display: flex;
+		justify-content: space-between;
+		align-items: top;
+		margin-top: 14px;
+		margin-bottom:10px;
+
+		.inform-icon {
+			width: 30px;
+			height: 30px;
+			border:1px solid #7F7F7F;
+			border-radius: 50%;
+			position: relative;
+
+			span{
+				position: absolute;
+				top:50%;
+				left:50%;
+				transform: translate(-50%,-45%);
+				font-size: 16px;
+				font-family: 'Actor';
+			}
+		}
+		
+		.accordion-footer-text {
+			flex:0 0 85%;
+		}
+	}
+}
