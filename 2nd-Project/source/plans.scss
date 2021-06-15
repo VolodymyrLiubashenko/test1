@@ -1,0 +1,147 @@
+.plans {
+	position: relative;
+	margin-top: -300px;
+	
+}
+.palns-container {
+	font-family: 'Aclonica';
+}
+.plans-title {
+	margin: 40px;
+	padding: 20px 20px;
+	color: $colorMainSecond;
+	font-size: $h2MobileFZ;
+	text-align: center;
+}
+.plans-row {
+	max-width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.plans-row-item {
+	background: $backgroundMainFirst;
+	min-width: 330px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	transition: 0.3s;
+	.plans-row-item-title{
+		font-family: 'Acme';
+		color: $colorMainThird ;
+		font-size: $h5MobileFZ ;
+		text-align: center;
+		text-transform: uppercase;
+		margin: 30px;
+		letter-spacing: 2px;
+	}
+	ul{
+		li{
+			margin: 0 50px;
+			border-top: 1px solid $borderColorSecond;
+			min-height: 60px;
+			@include flex(row,start,center,nowrap);
+			span{
+				margin-right: 20px;
+				position: relative;
+				width: 25px;
+				height: 25px;
+				display: inline-block;
+				border: 1px solid $borderColorfirst;
+				border-radius: 50%;
+				font-size: 13PX;
+				i{
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%,-50%);
+					color: $colorMainThird;
+				}
+			}
+		}
+		li.plans-minus{
+			color: #E5E5E5 ;
+			span{
+				border-color: #E5E5E5 ;
+			}
+			i{
+				color: #E5E5E5 ;
+				transform: translate(-50%,-40%);
+			}
+		}
+	}
+	.request {
+		@extend %tplButton;
+		min-width: 180px;
+		background: $backgroundMainFirst;
+		color: $colorMainThird;
+		border: 1px solid $borderColorfirst;
+		margin: 20px auto 0;
+		box-shadow: 0px 6px 12px rgba(127, 127, 127, 0.3);
+
+	}
+	.request:hover{
+		@extend %tplHoverButtonDark;
+	}
+}
+
+
+@media screen and (min-width: $tablets){
+	.plans-row{
+		@include flex(row,space-evenly,center,wrap);
+		max-width: 100%;
+	}
+	.plans-row-item{
+		margin: 20px 0 20px;
+		flex: 0 0 43%;
+		border-bottom: 1px solid $borderColorSecond ;
+	}
+}
+@media screen and (min-width: $laptop){
+	.plans{
+		margin-top: -500px;
+	}
+	.plans-title{
+		margin: 100px 0 50px;
+		font-size: $h2FZ;
+	}
+	.plans-row{
+		@include flex(row,space-between,center,nowrap);
+		max-width: 100%;
+	}
+	.plans-row-item{
+		min-width: 0;
+		margin: 0;
+		flex: 0 0 23%;
+		border-bottom: 1px solid $borderColorSecond ;
+		transform: 1s;
+		.plans-row-item-title{
+			font-size: $h5FZ ;
+			margin: 40px;
+		}
+	}
+	.plans-row-item:hover{
+		background: $gradientMain;
+		color: $colorMainFirst;
+		transform: scale(1.07);
+		.plans-row-item-title{
+			color: $colorMainFirst;
+		}
+		.plans-check{
+			span{
+				border-color: $colorMainFirst;
+			}
+			i{
+				color: $colorMainFirst;
+			}
+		}
+	}
+	.request{
+		margin: 40px auto 0;
+	}
+
+
+}
+
+
+.slick-track{
+	display: flex;
+}

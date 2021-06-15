@@ -1,0 +1,114 @@
+//Font Colors
+$colorMainFirst: #ffffff;
+$colorMainSecond:#191919;
+$colorMainThird:#22BF95;
+$colorMainFourth:#7F7F7F;
+//Font Sizes
+$h2FZ:42px;
+$h5FZ: 24px;
+$linkFZ:12px;
+$contentFZ:16px;
+$h2MobileFZ:24px;
+$contentMobileFZ:14px;
+$h5MobileFZ: 18px;
+
+//line-height
+$lineHeightMobileH2FZ:32px;
+$lineHeightcontentMobileFZ:22px;
+$lineHeightH2FZ:50px;
+$lineHeightcontentFZ:24px;
+//border-color
+$borderColorfirst:#22BF95;
+$borderColorSecond:#F2F2F2;
+$borderColorThird:#b2b2b2;
+$borderColorForth:#E5E5E5;
+
+
+//Background
+$backgroundMainFirst:#ffffff;
+$backgroundMainSecond:#22BF95;
+$gradientMain:linear-gradient(49deg, rgba(25,195,224,1) 36%, rgba(1,249,114,1) 100%, rgba(255,255,255,0) 100%);
+//box-shadow
+$boxShadowButton:0px 6px 12px rgba(127, 127, 127, 0.3);
+
+//hover
+$backgroundHoverDark:#7F7F7F;
+$backgroundHoverLight:#ffffff;
+$hoverlinkColor:#A60000;
+$boxShadowHoverButton:0px 6px 20px rgba(127, 127, 127, 1);
+
+
+//Mixins
+@mixin posPseudoEelement($t,$l,$x,$y,$b,$w,$h){
+content:"";
+position: absolute;
+top: $t;
+left:$l;
+transform: translate($x,$y);
+background: $b;
+width: $w;
+height: $h;
+}
+
+@mixin flex($d,$j,$a,$w){
+	display: flex;
+	flex-direction: $d;
+	justify-content: $j;
+	align-items:$a;
+	flex-wrap: $w;
+}
+
+//breackpoints
+$tablets:767px;
+$laptop:1024px;
+$desktop:1440px;
+
+
+
+//Templates
+%tplButton{
+	display:block;
+	min-height: 40px;
+	border-radius:20px;
+	text-transform: uppercase;
+	font-family: 'Acme';
+	font-size:$linkFZ;
+	letter-spacing: 2px;
+	position: relative;
+	overflow: hidden;
+}
+
+%tplLinkButton{
+		border-radius: 20px;
+		display: block;
+		min-height: 40px;
+		font-family: 'Acme';
+		font-size:$linkFZ;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		line-height: 40px;
+		text-align: center;
+		position: relative;
+		overflow: hidden;
+}
+
+%tplHoverButtonDark{
+	background: $backgroundMainSecond;
+	color : $colorMainFirst;
+	box-shadow:  $boxShadowHoverButton;
+	a{
+		background: $backgroundMainSecond;
+		color : $colorMainFirst;
+	}
+}
+
+%tplHoverButtonLight{
+	background: $backgroundHoverLight;
+	color : $colorMainThird;
+	box-shadow: $boxShadowHoverButton;
+	a{
+		background: $backgroundHoverLight;
+		color : $colorMainThird;
+	}
+}
+

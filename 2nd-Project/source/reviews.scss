@@ -1,0 +1,100 @@
+.reviews {
+	padding: 40px;
+}
+
+.reviews-row {
+	flex: 0 0 100%;
+	@include flex(column,space-between,center,nowrap);
+
+}
+
+.reviews-cite {
+	p,cite{
+		text-align: center;
+		font-family: 'Aclonica';
+		color: $colorMainFourth ;
+		line-height: $lineHeightcontentMobileFZ;
+		font-size: $contentMobileFZ;
+	}
+	cite{
+		display: block;
+		font-family: 'Acme';
+		margin: 40px 0 20px;
+	}
+}
+.reviews-logo {
+	margin-bottom: 30px;
+	max-width: 340px;
+	img{
+		width: 100%;
+	}
+}
+.reviews-logo-slide {
+	@include flex(row,space-between,center,nowrap);
+	li{
+		cursor: pointer;
+		flex: 0 0 20%;
+		img{
+			width: 100%;
+		}
+	}
+}
+.reviews-slider-line {
+	position: relative;
+	height: 2px;
+	margin: 15px auto;
+	background: #E5E5E5;
+}
+.slider-bar {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0%;
+	transform: translate(0,-50%);
+	height: 4px;
+	width: 20%;
+	background: $backgroundMainSecond;
+	transition: 1s;
+}
+
+.reviews-carusel {
+	overflow: hidden;
+	@include flex(row,space-between,center,nowrap);
+}
+
+@media screen and (min-width:$laptop){
+	.reviews {
+		margin-top: 100px;
+	}
+	.reviews-carusel{
+		margin: 0 135px;
+	}
+	.reviews-row{
+		@include flex(row,space-between,center,nowrap);
+	}
+	.reviews-item{
+		flex: 0 0 48%;
+	}
+	.reviews-logo{
+		flex: 0 0 40%;
+		max-width: 100%;
+	}
+	.reviews-cite{
+		p{
+			text-align: left;
+			line-height: $lineHeightcontentFZ;
+			font-size: $contentFZ;
+		}
+		cite{
+			text-align: right;
+		}
+	}
+	.reviews-logo-slide{
+		li{
+			flex: 0 0 10%;
+		}
+	}
+	.slider-bar{
+		width: 10%;
+	}
+}

@@ -1,0 +1,154 @@
+.footer {
+	background: #F2F2F2;
+}
+.footer-container {
+	padding: 25px 20px;
+}
+
+.footer-links {
+	margin-bottom: 20px;
+	li{
+		margin-bottom: 12px;
+		a{
+			color: $colorMainFourth;
+			font-family: 'Acme';
+			letter-spacing: 2px;
+			padding: 10px 0;
+		}
+		p{
+			color: $colorMainFourth;
+			font-family: 'Acme';
+			letter-spacing: 2px;
+			a{
+				font-family: 'Aclonica';
+				color: $colorMainFourth;
+				font-size: 16px;
+				line-height: 24px;
+
+			}
+		}
+	}
+}
+
+.footer-contacts {
+	font-family: 'Aclonica';
+	color: $colorMainFourth ;
+	li{
+		padding-top: 8px;
+		border-top: 1px solid $borderColorfirst;
+		p{
+			font-size: 16px;
+			line-height: 24px;
+		}
+		p:nth-child(2){
+			a{
+				font-size: 16px;
+				line-height: 24px;
+				color: $colorMainFourth;
+			}
+		}
+		p:nth-child(3){
+			font-size: 12px;
+			line-height: 20px;
+		}
+		p{
+			margin: 6px 0;
+			a{
+				color: $colorMainThird ;
+				font-size: $linkFZ ;
+				font-family: 'Aclonica' ;
+			}
+		}
+	}
+
+}
+.footer-socMedia {
+	border-top: 1px solid $borderColorThird;
+	padding-top: 20px;
+}
+.footer-socMedia-links {
+	
+	@include flex(row,space-evenly,center,nowrap);
+	li{
+		a{
+			color: $colorMainFourth;
+		}
+	}
+}
+.footer-logo {
+	display: block;
+	text-align: center;
+	max-width: 110px;
+	margin: 20px auto 0;
+	img{
+		width: 100%;
+		}
+}
+
+
+@media screen and (min-width: $laptop){
+	.footer{
+		margin-top: 80px;
+	}
+	.footer-container{
+		padding: 80px 20px 25px;
+	}
+	.footer-row {
+		@include flex(row,space-between,stretch,nowrap);
+	}
+	.footer-links{
+		li{
+			margin-bottom: 30px;
+		}
+		
+	}
+	.footer-contacts{
+		flex: 0 0 80%;
+		@include flex(column,space-between,stretch,nowrap);
+		li{
+			flex: 0 0 33.333%;
+			@include flex(row,space-between,center,nowrap);
+			p{
+				flex: 0 0 27%;
+			}
+			p:last-child{
+				flex: 0 0 10%;
+				text-align: right;
+				a{
+					font-size: 14px;
+				}
+			}
+			p{
+			font-size: 20px;
+			line-height: 32px;
+			}
+			p:nth-child(2){
+				a{
+					font-size: 20px;
+					line-height: 32px;
+				}
+				a:hover{
+					color: $hoverlinkColor;
+				}
+			}
+			p:nth-child(3){
+			font-size: 16px;
+			line-height: 20px;
+			}
+
+		}
+	}
+	.footer-socMedia{
+		margin-top: 50px;
+		padding-top: 25px;
+		@include flex(row,space-between,center,nowrap);
+	}
+	.footer-socMedia-links{
+		flex: 0 0 25%
+		
+	}
+	.footer-logo{
+		flex: 0 0 25%;
+		margin: 20px 0;
+	}
+}

@@ -1,0 +1,328 @@
+
+.header {
+	width: 100%;
+	margin: 0 auto;
+	position: fixed;
+	top: 0;
+	min-height: 60px;
+	padding: 0 20px;
+	z-index: 4;
+	&:before{
+		@include posPseudoEelement(0,0,0,0,transparent,100%,100%);
+	}
+
+}
+body.lock{
+	overflow: hidden;
+}
+
+.header-body {
+	height: 60px;
+}
+
+.header.scroll{
+		&:before{
+			background: transparent;
+		}
+		.header-logo{
+			a{
+				color: $colorMainFourth;
+	 		}
+	 		a:hover{
+	 			color: $hoverlinkColor;
+	 		}
+		}
+		.burger.scroll{
+			&:before{
+				background: #7F7F7F ;
+			}
+			&:after{
+				background: #7F7F7F ;
+			}
+			span{
+				background: #7F7F7F ;
+			}
+		}
+}
+.header.active,.header.active.scroll {
+	&:before{
+			background: $gradientMain;
+			z-index: 7;
+		}
+	.header-body{
+
+		.header-logo{
+			a{
+				color: $colorMainFirst;
+	 		}
+		}
+
+		.burger.scroll{
+			&:before{
+				background: $backgroundMainFirst;
+			}
+			&:after{
+				background: $backgroundMainFirst;
+			}
+			span{
+				background: $backgroundMainFirst;
+			}
+		}
+	}
+}
+
+.header-body-elements {
+	text-transform: uppercase;
+	height: inherit;
+	@include flex(row,space-between,center,nowrap);
+}
+
+.header-logo {
+	position: relative;
+	font-size: 20px;
+	font-family: 'Actor';
+	font-weight: bold;
+	z-index: 7;
+	a{
+		color: $colorMainFirst;
+	 }
+	 a:hover{
+	 	color: $hoverlinkColor;
+	 }
+}
+
+.burger{
+	position: relative;
+	height: 20px;
+	width: 25px;
+	background: transparent;
+	z-index: 7;
+	&:before{
+		@include posPseudoEelement(0,0,0,-50%,$colorMainFirst,100%,2px);
+		transition: 0.3s;
+	}
+	&:after{
+		@include posPseudoEelement(100%,0,0,-50%,$colorMainFirst,100%,2px);
+		transition: 0.3s;
+	}
+	span{
+		@include posPseudoEelement(50%,0,0,-50%,$colorMainFirst,100%,2px);
+		transition: 0.3s;
+	}
+}
+.burger.active{
+	&:before{
+		transform:rotate(-45deg);
+		top: 50%
+	}
+	&:after{
+		transform:rotate(45deg);
+		top: 50%
+	}
+	span{
+		transform: scale(0);
+	}
+}
+
+.header-navigation.is-hidden{
+	display: none;
+}
+.header-navigation {
+	z-index: 6;
+	position: absolute;
+	padding-top: 100px;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	min-height: 100vh;
+	background: $backgroundMainFirst;
+	overflow: auto;
+	@include flex(column,space-between,center,nowrap);
+}
+
+.navigation-menu {
+	@include flex(column,space-between,center,nowrap);
+	li{
+		margin-bottom: 16px;
+		a{
+			padding: 5px 0;
+			color: $colorMainThird;
+			text-transform: uppercase;
+			font-family: 'Acme';
+			font-size: $linkFZ;
+			letter-spacing: 2px;
+			line-height: 24px;
+		}
+		a:hover{
+			color: $hoverlinkColor;
+		}
+	}
+}
+
+.header-buttons{
+	padding-bottom: 40px;
+	@include flex(column,space-between,center,nowrap);
+	button{
+		color: $colorMainThird;
+		background: transparent;
+		border: 1px solid $colorMainThird;
+		margin-top: 16px;
+		@extend %tplButton;
+	}
+	button:hover{
+		border:none;
+	}
+	button:first-child{
+		min-width: 180px;
+		
+	}
+	button:last-child{
+		min-width: 90px;
+		
+	}
+
+}
+
+.page-title {
+	min-height: 200px;
+	width: 100%;
+	padding: 20px;
+	background: $gradientMain;
+	margin: 0 auto;
+	color: $colorMainFirst;
+	font-family: 'Actor';
+	letter-spacing: 2px;
+	text-align: center;
+	.title {
+	margin-top: 90px;
+	font-size: 40px;
+	}
+	.title-description {
+		position: relative;
+		padding: 0 20px;
+		font-size: 12px;
+		text-align: left;
+		line-height: 20px;
+		margin: 40px 0;
+		&:before{
+			@include posPseudoEelement(0,0,0,0,$backgroundMainFirst,2px,100%);
+		}
+	}
+	button{
+		@extend %tplButton;
+		margin: 0 auto;
+		min-width: 180px;
+		background: $backgroundMainFirst;
+		color: $colorMainThird;
+		border: 1px solid $colorMainThird;
+		
+	}
+
+}
+
+@media screen and (min-width:$laptop){
+	.burger{
+		display: none;
+	}
+	.header.scroll{
+		.navigation-menu{
+			li{
+				a{
+					color: $colorMainFourth;
+				}
+				a:hover{
+					color: $hoverlinkColor;
+				}
+			}
+		}
+		.header-buttons{
+			button{
+				color: $colorMainFourth;
+				border: 1px solid $colorMainFourth;
+				outline: none;
+			}
+			button:hover{
+				color: $colorMainFirst;
+				border:none;
+			}
+		}
+	}
+	.header-logo{
+		flex:0 0 10%;
+	}
+	.header-navigation.is-hidden{
+		display: block;
+		position: static;
+		background: none;
+		min-height: inherit;
+		padding-top: 0;
+		overflow: unset;
+		@include flex(row,space-between,center,nowrap);
+	}
+	.navigation-menu {
+		flex:0 0 70%;
+		margin: 0 20px;
+		@include flex(row,space-between,center,nowrap);
+		li{
+			margin-bottom: 0;
+			.navigation-menu-link{
+				color: $colorMainFirst;
+				cursor: pointer;
+			}
+		}
+	}
+	.header-buttons{
+		padding-bottom: 0;
+		@include flex(row,space-between,center,nowrap);
+		button{
+			color:$colorMainFirst;
+			border-color: #ffffff;
+			margin-top: 0;
+		}
+		
+		button:first-child{
+			min-width: 140px;
+			margin-right: 10px;
+			
+		}
+		button:last-child{
+			min-width: 70px;
+		}
+
+	}
+	.page-title {
+		padding-bottom: 60px;
+		.title {
+			max-width: 800px ;
+			margin: 160px auto 0;
+			font-size: 90px;
+		}
+		div{
+			@include flex(row,space-between,center,nowrap);
+			max-width: 900px;
+			margin: 0 auto;
+		}
+		.title-description {
+			flex: 0 0 60%;
+		}
+		button{
+			margin: 0;
+			box-shadow: $boxShadowButton;
+		}
+	}
+}
+
+@media screen and (min-width:$desktop){
+	.header-buttons{
+		button:first-child{
+			min-width: 180px;
+			margin-right: 10px;
+			
+		}
+		button:last-child{
+			min-width: 90px;
+		}
+	}
+}
+
+

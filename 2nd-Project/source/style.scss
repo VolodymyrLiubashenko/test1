@@ -1,0 +1,69 @@
+@import "null.scss";
+@import "font-awesome.scss";
+@import "variables.scss";
+@import "header.scss";
+@import "what-is-skout.scss";
+@import "cybersecurity.scss";
+@import "solve-problems.scss";
+@import "plans.scss";
+@import "reviews.scss";
+@import "question.scss";
+@import "footer.scss";
+@font-face {
+	font-family: 'Aclonica';
+	src: url('../fonts/Aclonica/aclonica/aclonica.regular.eot');
+	src: local('☺'), url('../fonts/Aclonica/aclonica.regular.woff') format('woff'), url('../fonts/Aclonica/aclonica.regular.ttf') format('truetype'), url('../fonts/Aclonica/aclonica.regular.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Acme';
+	src: url('../fonts/Acme/Acme-Regular.eot');
+	src: local('☺'), url('../fonts/Acme/Acme-Regular.woff') format('woff'), url('../fonts/Acme/Acme-Regular.ttf') format('truetype'), url('../fonts/Acme/Acme-Regular.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Actor';
+	src: url('../fonts/Actor/Actor-Regular.eot');
+	src: local('☺'), url('../fonts/Actor/Actor-Regular.woff') format('woff'), url('../fonts/Actor/Actor-Regular.ttf') format('truetype'), url('../fonts/Actor/Actor-Regular.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.animation-button-dark{
+	
+}
+.animation-button-light{
+	
+}
+.animation-button-dark:hover {
+		@extend %tplHoverButtonDark;
+	}
+.animation-button-light:hover{
+	@extend %tplHoverButtonLight;
+}
+
+.moove{
+		animation-name: moove;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+	}
+	
+@keyframes moove {
+		0%{
+			transform:translate(0,0);
+		}
+		100%{
+			transform:translate(-100%,0);
+		}
+	}
+
+.animation-link-style:hover {
+	color: $hoverlinkColor;
+}
